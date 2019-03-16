@@ -1,2 +1,2 @@
-# UrbanPlanning
-Project work for UrbanPlanning
+# UrbanPlanner.AI
+Project work for UrbanPlanner.AI
