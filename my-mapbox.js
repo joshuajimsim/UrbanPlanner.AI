@@ -2,17 +2,14 @@
 $(document).ready(init);
 
 function init(jQuery) {
-    
     CurrentYear();
     initMap();
-    turnOnAllButtons();
 
     /*
     // user clicks some button
     $('#someButton').on('click', function () {
         // do something here
     });
-
     */
 }
 
@@ -45,7 +42,7 @@ function MapGL() {
         // center: [-37.809820, 144.96983],
 
         center: [144.96983, -37.809820],
-        zoom: 15.5,
+        zoom: 10,
         pitch: 45,
         bearing: -0,
     });
@@ -108,7 +105,7 @@ function mapLoaded() {
     }, labelLayerId);
 
 
-// ------------------------ Hospital Layers
+//------------------------ Hospital Layers
 
     map.addLayer({
         "id": "hospital_points",
@@ -136,46 +133,38 @@ function mapLoaded() {
 
 
     map.addLayer({
-        "id": "hospital_heat",
+        "id": "hospitals_heat",
         "type": "heatmap",
         "source": "Hospitals",
         "maxzoom": 24,
         "paint": {
-        // Increase the heatmap weight based on frequency and property magnitude
-            "heatmap-weight": 1
-               /*  [
-                 "interpolate",
-                 ["linear"],
-                 ["get", "mag"],
-                 0, 1000,
-                 6, 1000
-             ]*/
-            ,
-        // Increase the heatmap color weight weight by zoom level
-        // heatmap-intensity is a multiplier on top of heatmap-weight
+            // Increase the heatmap weight based on frequency and property magnitude
+            "heatmap-weight": 1,
+            // Increase the heatmap color weight weight by zoom level
+            // heatmap-intensity is a multiplier on top of heatmap-weight
             "heatmap-intensity":
                 [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                0, 10,
-                9, 2
-            ]
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0, 10,
+                    9, 2
+                ]
             ,
-        // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
-        // Begin color ramp at 0-stop with a 0-transparancy color
-        // to create a blur-like effect.
+            // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+            // Begin color ramp at 0-stop with a 0-transparancy color
+            // to create a blur-like effect.
             "heatmap-color":
                 ["interpolate",
-                ["linear"],
-                ["heatmap-density"],
-                    0, "rgba(100,102,172,0)",
-                    0.3, "rgb(50,0,255)",
-                    0.5, "rgb(50,50,150)",
-                    0.8, "rgb(150,50,50)",
-                    1, "rgb(255,50,50)"]
+                    ["linear"],
+                    ["heatmap-density"],
+                    0, "rgba(255,125,125,0)",
+                    0.3, "rgb(255,100,100)",
+                    0.5, "rgb(255,75,75)",
+                    0.8, "rgb(255,50,50)",
+                    1, "rgb(255,25,25)"]
             ,
-        // Adjust the heatmap radius by zoom level
+            // Adjust the heatmap radius by zoom level
             /*"heatmap-radius": [
                 "interpolate",
                 ["linear"],
@@ -184,19 +173,19 @@ function mapLoaded() {
                 24, 150
             ],*/
             "heatmap-radius": {
-            "base": 2,
-              "stops": [
-                [
-                  10,
-                  32
-                ],
-                [
-                  19,
-                  4096*2
+                "base": 2,
+                "stops": [
+                    [
+                        10,
+                        32
+                    ],
+                    [
+                        19,
+                        4096*2
+                    ]
                 ]
-              ]
             },
-        // Transition from heatmap to circle layer by zoom level
+            // Transition from heatmap to circle layer by zoom level
             /*"heatmap-opacity": [
                 "interpolate",
                 ["linear"],
@@ -208,9 +197,284 @@ function mapLoaded() {
     }, 'waterway-label');
 
     map.addLayer({
-        "id": "hospital_point",
+        "id": "hospitals-point",
         "type": "circle",
         "source": "Hospitals",
+        "minzoom": 7,
+        "paint": {
+            // Size circle radius by earthquake magnitude and zoom level
+            "circle-radius": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                7, [
+                    "interpolate",
+                    ["linear"],
+                    ["get", "mag"],
+                    1, 1,
+                    6, 4
+                ],
+                16, [
+                    "interpolate",
+                    ["linear"],
+                    ["get", "mag"],
+                    1, 5,
+                    6, 7
+                ]
+            ],
+            // Color circle by earthquake magnitude
+            "circle-color": "rgb(255, 0, 0)",
+            "circle-stroke-color": "white",
+            "circle-stroke-width": 1,
+            // Transition from heatmap to circle layer by zoom level
+            "circle-opacity": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                5, 0,
+                7, 1
+            ]
+        }
+    }, 'waterway-label');
+
+
+    //----------------------------- Schools Layers
+        map.addLayer({
+            "id": "schoolsPoints",
+            "type": "symbol",
+            "source":
+                {
+                    "type": "geojson",
+                    "data": SchoolsData		// data from external JSON file
+                },
+            "layout":
+                {
+                    "icon-image": "{icon}-15",
+                    "text-field": "{title}",
+                    "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                    "text-offset": [0, 0.6],
+                    "text-anchor": "top"
+                }
+        });
+
+        map.addSource('Schools', {
+            "type": "geojson",
+            "data": SchoolsData
+        });
+
+        map.addLayer({
+            "id": "schools-heat",
+            "type": "heatmap",
+            "source": "Schools",
+            "maxzoom": 24,
+            "paint": {
+    // Increase the heatmap weight based on frequency and property magnitude
+                "heatmap-weight": 1,
+    // Increase the heatmap color weight weight by zoom level
+    // heatmap-intensity is a multiplier on top of heatmap-weight
+                "heatmap-intensity":
+                    ["interpolate",
+                        ["linear"],
+                        ["zoom"],
+                        0, 10,
+                        9, 2
+                    ],
+    // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+    // Begin color ramp at 0-stop with a 0-transparancy color
+    // to create a blur-like effect.
+                "heatmap-color": [
+                    "interpolate",
+                    ["linear"],
+                    ["heatmap-density"],
+                    0, "rgba(125,200,250,0)",
+                    0.2, "rgb(125,200,240,0)",
+                    0.4, "rgb(100,220,240)",
+                    0.6, "rgb(60,240,240)",
+                    0.8, "rgb(25,250,250)",
+                    1, "rgb(0,255,255)"
+                ], //0, 225, 225
+    // Adjust the heatmap radius by zoom level
+                "heatmap-radius": {
+                    "base": 2,
+                    "stops": [
+                        [
+                            10,
+                            32
+                        ],
+                        [
+                            19,
+                            4096*2
+                        ]
+                    ]
+                },
+    // Transition from heatmap to circle layer by zoom level
+
+            }
+        }, 'waterway-label');
+
+        map.addLayer({
+            "id": "schools-point",
+            "type": "circle",
+            "source": "Schools",
+            "minzoom": 7,
+            "paint": {
+    // Size circle radius by earthquake magnitude and zoom level
+                "circle-radius": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    7, [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "mag"],
+                        1, 1,
+                        6, 4
+                    ],
+                    16, [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "mag"],
+                        1, 5,
+                        6, 20
+                    ]
+                ],
+    // Color circle by earthquake magnitude
+                "circle-color": "rgb(25, 25, 255)",
+                "circle-stroke-color": "white",
+                "circle-stroke-width": 1,
+    // Transition from heatmap to circle layer by zoom level
+                "circle-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    5, 0,
+                    7, 1
+                ]
+            }
+        }, 'waterway-label');
+
+
+
+    // When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with label name HTML from its properties.
+    map.on('click', 'hospitals-point', function (e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.LabelName;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
+
+// Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', 'places', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+// Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'places', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+//---- recommended points
+    map.addLayer({
+        "id": "recommendation_points",
+        "type": "symbol",
+        "source":
+            {
+                "type": "geojson",
+                "data": Recom_data
+            },
+                "layout":
+                    {
+                        "icon-image": "{icon}-15",
+                        "text-field": "{title}",
+                        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                        "text-offset": [0, 0.6],
+                        "text-anchor": "top"
+                    }
+
+    });
+
+    map.addSource('Recommendations', {
+        "type": "geojson",
+        "data": Recom_data
+    });
+
+
+    map.addLayer({
+        "id": "recommendationHospital_heat",
+        "type": "heatmap",
+        "source": "Recommendations",
+        "maxzoom": 24,
+        "paint": {
+            // Increase the heatmap weight based on frequency and property magnitude
+            "heatmap-weight": 1
+
+            ,
+            // Increase the heatmap color weight weight by zoom level
+            // heatmap-intensity is a multiplier on top of heatmap-weight
+            "heatmap-intensity":
+                [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0, 10,
+                    9, 2
+                ]
+            ,
+            // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+            // Begin color ramp at 0-stop with a 0-transparancy color
+            // to create a blur-like effect.
+            "heatmap-color":
+                ["interpolate",
+                    ["linear"],
+                    ["heatmap-density"],
+                    0, "rgba(100,102,172,0)",
+                    0.3, "rgb(100,186,100)",
+                    0.5, "rgb(25,186,70)",
+                    0.8, "rgb(0,186,50)",
+                    1, "rgb(0,186,25)"]
+            ,
+            // Adjust the heatmap radius by zoom level
+            /*"heatmap-radius": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                2, 0,
+                24, 150
+            ],*/
+            "heatmap-radius": {
+                "base": 2,
+                "stops": [
+                    [
+                        10,
+                        32*2
+                    ],
+                    [
+                        19,
+                        4096*2*4
+                    ]
+                ]
+            },
+            // Transition from heatmap to circle layer by zoom level
+
+        }
+    }, 'waterway-label');
+
+
+    map.addLayer({
+        "id": "recommendations-point",
+        "type": "circle",
+        "source": "Recommendations",
         "minzoom": 7,
         "paint": {
             // Size circle radius by earthquake magnitude and zoom level
@@ -233,11 +497,11 @@ function mapLoaded() {
                     6, 50
                 ]
             ],
-        // Color circle by earthquake magnitude
-            "circle-color": "rgb(0, 0, 255)",
+            // Color circle by earthquake magnitude
+            "circle-color": "rgb(0, 255, 0)",
             "circle-stroke-color": "white",
             "circle-stroke-width": 1,
-        // Transition from heatmap to circle layer by zoom level
+            // Transition from heatmap to circle layer by zoom level
             "circle-opacity": [
                 "interpolate",
                 ["linear"],
@@ -248,242 +512,31 @@ function mapLoaded() {
         }
     }, 'waterway-label');
 
-/*
-//----------------------------- Schools Layers
-    map.addLayer({
-        "id": "schoolsPoints",
-        "type": "symbol",
-        "source":
-            {
-                "type": "geojson",
-                "data": SchoolsData		// data from external JSON file
-            },
-        "layout":
-            {
-                "icon-image": "{icon}-15",
-                "text-field": "{title}",
-                "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-                "text-offset": [0, 0.6],
-                "text-anchor": "top"
-            }
-    });
-
-    map.addSource('Schools', {
-        "type": "geojson",
-        "data": SchoolsData
-    });
-
-    map.addLayer({
-        "id": "schools-heat",
-        "type": "heatmap",
-        "source": "Schools",
-        "maxzoom": 9,
-        "paint": {
-// Increase the heatmap weight based on frequency and property magnitude
-            "heatmap-weight": [
-                "interpolate",
-                ["linear"],
-                ["get", "mag"],
-                0, 0,
-                6, 1
-            ],
-// Increase the heatmap color weight weight by zoom level
-// heatmap-intensity is a multiplier on top of heatmap-weight
-            "heatmap-intensity": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                1, 10,
-                9, 3
-            ],
-// Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
-// Begin color ramp at 0-stop with a 0-transparancy color
-// to create a blur-like effect.
-            "heatmap-color": [
-                "interpolate",
-                ["linear"],
-                ["heatmap-density"],
-                0, "rgba(33,102,172,0)",
-                0.2, "rgb(103,169,207)",
-                0.4, "rgb(209,229,240)",
-                0.6, "rgb(253,219,199)",
-                0.8, "rgb(239,138,98)",
-                1, "rgb(178,24,43)"
-            ],
-// Adjust the heatmap radius by zoom level
-            "heatmap-radius": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                2, 10,
-                5, 50
-            ],
-// Transition from heatmap to circle layer by zoom level
-            "heatmap-opacity": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                7, 1,
-                9, 0
-            ],
-        }
-    }, 'waterway-label');
-
-    map.addLayer({
-        "id": "schools-point",
-        "type": "circle",
-        "source": "Schools",
-        "minzoom": 7,
-        "paint": {
-// Size circle radius by earthquake magnitude and zoom level
-            "circle-radius": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                7, [
-                    "interpolate",
-                    ["linear"],
-                    ["get", "mag"],
-                    1, 1,
-                    6, 4
-                ],
-                16, [
-                    "interpolate",
-                    ["linear"],
-                    ["get", "mag"],
-                    1, 5,
-                    6, 20
-                ]
-            ],
-// Color circle by earthquake magnitude
-            "circle-color": "rgb(255, 0, 0)",
-            "circle-stroke-color": "white",
-            "circle-stroke-width": 1,
-// Transition from heatmap to circle layer by zoom level
-            "circle-opacity": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                5, 0,
-                7, 1
-            ]
-        }
-    }, 'waterway-label');
-*/
 
 }
 
 function buttonClickHandler(_this) {
-    
-   if(_this.id != "button8"){
-    buttonStyleHandler(_this); 
-   }
-   var hospitalLayers = ["hospital_point","hospital_heat","hospital_points"];   
-    
-   var reccomandationLayers = [""];
-    
-   var visibility = map.getLayoutProperty(clickedLayer[1], 'visibility');
-    
-    if(_this.id == "button1" || _this.id == "button2"){
-        
-        if(visibility == "visible"){
-            //turn off
-            var j = 0;
-            for (j=0;j<clickedLayer.length;j++){
-                map.setLayoutProperty(hospitalLayers[j], 'visibility', 'none');
-                console.log(map.getLayoutProperty(hospitalLayers[j], 'visibility'));
-            }
-        }
-        
-        if(visibility == 'none'){
-            //turn on
-            var j = 0;
-                for (j=0;j<clickedLayer.length;j++){
-                    map.setLayoutProperty(hospitalLayers[j], 'visibility', 'visible');
-                    console.log("im in adding visibility code");
-                    console.log(map.getLayoutProperty(hospitalLayers[j], 'visibility'));
-                    //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
-                } 
-        }
-    }
-    
-    if(_this.id == "button8"){
 
-    if(visibility == "visible"){
-        //turn off
-        var j = 0;
-        for (j=0;j<clickedLayer.length;j++){
-            map.setLayoutProperty(reccomentations[j], 'visibility', 'none');
-            console.log(map.getLayoutProperty(reccomentations[j], 'visibility'));
-        }
-    }
+    buttonStyleHandler(_this);
 
-    if(visibility == 'none'){
-        //turn on
-        var j = 0;
-            for (j=0;j<clickedLayer.length;j++){
-                map.setLayoutProperty(reccomentations[j], 'visibility', 'visible');
-                console.log("im in adding visibility code");
-                console.log(map.getLayoutProperty(reccomentations[j], 'visibility'));
-                //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
-            } 
-    }
-}
-    
-    
-    
-    /*var i = 0;
-    for (i=0;i<buttonStatus.length;i++){
-        
-        if(buttonStatus[i] == 1){
-            
-            //make sure hospital layers are turned on
-            if(i==0 || i==1){
-                
-                var j = 0;
-                for (j=0;i<clickedLayer.length;j++){
-                    map.setLayoutProperty(clickedLayer[j], 'visibility', 'visible');
-                    //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
-                }
-                
-            }
-            
-        }
-        else{    
-            //make sure hospital layers are turned off
-            if(i==0 || i==1){
-                
-               var j = 0;
-                for (j=0;i<clickedLayer.length;j++){
-                    map.setLayoutProperty(clickedLayer[j], 'visibility', 'none');
-                    //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
-                } 
-                
-            }
-            
-        }
-        
-    }*/
-    
-    
-   //put code for toggling map layer visibility here. Button states can be found in the buttonStatus array. 
-   /*
-   true is active, false is inactive. 
-   buttonStatus[0] -> ALL
-   buttonStatus[1] -> HealthCare
-   buttonStatus[2] -> Education
-   buttonStatus[6] -> Population density
-   
-   var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
- 
-if (visibility === 'visible') {
-map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-this.className = '';
-} else {
-this.className = 'active';
-map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-}
-   
-   */
-    
+    //put code for toggling map layer visibility here. Button states can be found in the buttonStatus array.
+    /*
+    true is active, false is inactive.
+    buttonStatus[0] -> ALL
+    buttonStatus[1] -> HealthCare
+    buttonStatus[2] -> Education
+    buttonStatus[6] -> Population density
+
+    var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+ if (visibility === 'visible') {
+ map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+ this.className = '';
+ } else {
+ this.className = 'active';
+ map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+ }
+
+    */
+
 }
