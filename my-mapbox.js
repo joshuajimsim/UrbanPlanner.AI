@@ -370,6 +370,16 @@ function buttonClickHandler(_this) {
    buttonStatus[2] -> Education
    buttonStatus[6] -> Population density
    
+   var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+ 
+if (visibility === 'visible') {
+map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+this.className = '';
+} else {
+this.className = 'active';
+map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+}
+   
    */
     
 }
