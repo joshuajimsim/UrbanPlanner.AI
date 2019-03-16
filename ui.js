@@ -1,4 +1,3 @@
-var toggle = 0;
 var buttonStatus = [];
 
 //code for changing the colour of the buttons after they have been pressed. 

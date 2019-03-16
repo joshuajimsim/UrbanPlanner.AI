@@ -109,7 +109,7 @@ function mapLoaded() {
 // ------------------------ Hospital Layers
 
     map.addLayer({
-        "id": "points",
+        "id": "hospital_points",
         "type": "symbol",
         "source":
             {
@@ -134,20 +134,20 @@ function mapLoaded() {
 
 
     map.addLayer({
-        "id": "hospitals-heat",
+        "id": "hospitals_heat",
         "type": "heatmap",
         "source": "Hospitals",
-        "maxzoom": 9,
+        "maxzoom": 24,
         "paint": {
         // Increase the heatmap weight based on frequency and property magnitude
             "heatmap-weight": 1
-            //     [
-            //     "interpolate",
-            //     ["linear"],
-            //     ["get", "mag"],
-            //     0, 0,
-            //     6, 1
-            // ]
+               /*  [
+                 "interpolate",
+                 ["linear"],
+                 ["get", "mag"],
+                 0, 1000,
+                 6, 1000
+             ]*/
             ,
         // Increase the heatmap color weight weight by zoom level
         // heatmap-intensity is a multiplier on top of heatmap-weight
@@ -174,26 +174,39 @@ function mapLoaded() {
                     1, "rgb(255,50,50)"]
             ,
         // Adjust the heatmap radius by zoom level
-            "heatmap-radius": [
+            /*"heatmap-radius": [
                 "interpolate",
                 ["linear"],
                 ["zoom"],
-                2, 10,
-                5, 50
-            ],
+                2, 0,
+                24, 150
+            ],*/
+            "heatmap-radius": {
+            "base": 2,
+              "stops": [
+                [
+                  10,
+                  32
+                ],
+                [
+                  19,
+                  4096*2
+                ]
+              ]
+            },
         // Transition from heatmap to circle layer by zoom level
-            "heatmap-opacity": [
+            /*"heatmap-opacity": [
                 "interpolate",
                 ["linear"],
                 ["zoom"],
                 7, 1,
                 9, 0
-            ],
+            ],*/
         }
     }, 'waterway-label');
 
     map.addLayer({
-        "id": "earthquakes-point",
+        "id": "hospitals_point",
         "type": "circle",
         "source": "Hospitals",
         "minzoom": 7,
