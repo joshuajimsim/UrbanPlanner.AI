@@ -357,3 +357,19 @@ function mapLoaded() {
 */
 
 }
+
+function buttonClickHandler(_this) {
+    
+   buttonStyleHandler(_this); 
+    
+   //put code for toggling map layer visibility here. Button states can be found in the buttonStatus array. 
+   /*
+   true is active, false is inactive. 
+   buttonStatus[0] -> ALL
+   buttonStatus[1] -> HealthCare
+   buttonStatus[2] -> Education
+   buttonStatus[6] -> Population density
+   
+   */
+    
+}
