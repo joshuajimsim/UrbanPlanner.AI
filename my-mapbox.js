@@ -2,8 +2,10 @@
 $(document).ready(init);
 
 function init(jQuery) {
+    
     CurrentYear();
     initMap();
+    turnOnAllButtons();
 
     /*
     // user clicks some button
@@ -134,7 +136,7 @@ function mapLoaded() {
 
 
     map.addLayer({
-        "id": "hospitals_heat",
+        "id": "hospital_heat",
         "type": "heatmap",
         "source": "Hospitals",
         "maxzoom": 24,
@@ -206,7 +208,7 @@ function mapLoaded() {
     }, 'waterway-label');
 
     map.addLayer({
-        "id": "hospitals_point",
+        "id": "hospital_point",
         "type": "circle",
         "source": "Hospitals",
         "minzoom": 7,
@@ -374,6 +376,68 @@ function mapLoaded() {
 function buttonClickHandler(_this) {
     
    buttonStyleHandler(_this); 
+    
+   var clickedLayer = ["hospital_point","hospital_heat","hospital_points"];    
+   var visibility = map.getLayoutProperty(clickedLayer[1], 'visibility');
+    
+    if(_this.id == "button1" || _this.id == "button2"){
+        
+        if(visibility == "visible"){
+            //turn off
+            var j = 0;
+            for (j=0;j<clickedLayer.length;j++){
+                map.setLayoutProperty(clickedLayer[j], 'visibility', 'none');
+                console.log(map.getLayoutProperty(clickedLayer[j], 'visibility'));
+            }
+        }
+        
+        if(visibility == 'none'){
+            //turn on
+            var j = 0;
+                for (j=0;j<clickedLayer.length;j++){
+                    map.setLayoutProperty(clickedLayer[j], 'visibility', 'visible');
+                    console.log("im in adding visibility code");
+                    console.log(map.getLayoutProperty(clickedLayer[j], 'visibility'));
+                    //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
+                } 
+        }
+    }
+    
+    
+    
+    /*var i = 0;
+    for (i=0;i<buttonStatus.length;i++){
+        
+        if(buttonStatus[i] == 1){
+            
+            //make sure hospital layers are turned on
+            if(i==0 || i==1){
+                
+                var j = 0;
+                for (j=0;i<clickedLayer.length;j++){
+                    map.setLayoutProperty(clickedLayer[j], 'visibility', 'visible');
+                    //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
+                }
+                
+            }
+            
+        }
+        else{    
+            //make sure hospital layers are turned off
+            if(i==0 || i==1){
+                
+               var j = 0;
+                for (j=0;i<clickedLayer.length;j++){
+                    map.setLayoutProperty(clickedLayer[j], 'visibility', 'none');
+                    //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
+                } 
+                
+            }
+            
+        }
+        
+    }*/
+    
     
    //put code for toggling map layer visibility here. Button states can be found in the buttonStatus array. 
    /*

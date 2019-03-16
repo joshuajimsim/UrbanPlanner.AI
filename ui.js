@@ -1,4 +1,29 @@
 var buttonStatus = [];
+var count = 0;
+
+//initalize buttons to be on
+//turn on all buttons 
+function turnOnAllButtons(){
+const list = document .getElementsByClassName("btn-secondary");   
+    var i;
+      
+      for(i=0;i<list.length;i++){
+          
+          buttonStatus[i] = true;
+          if(list[i].id == "button1"){ 
+              //list[i].style.backgroundColor = "#29d148";
+              list[i].style.backgroundColor = "#00ba19";
+              console.log("button1");
+          }
+          
+          else{
+                //list[i].style.backgroundColor = "#339966";
+              list[i].style.backgroundColor = "#005019";
+            }
+          list[i].style.color = "white"; 
+           list[i].activated = true;
+      }
+}
 
 //code for changing the colour of the buttons after they have been pressed. 
 function buttonStyleHandler(_this) {
@@ -12,10 +37,10 @@ const list = document .getElementsByClassName("btn-secondary");
   if ( _this.activated == 1) {
    
     if(_this.id == "button1"){  
-        _this.style.backgroundColor = "#29d148";
+        _this.style.backgroundColor = "#00ba19";
     }
     else{
-        _this.style.backgroundColor ="#339966";
+        _this.style.backgroundColor ="#005019";
     }  
     _this.style.color = "white";
   }
@@ -52,7 +77,7 @@ const list = document .getElementsByClassName("btn-secondary");
             //turn on all buttons 
             if (list[i].activated == 1){
             
-                list[i].style.backgroundColor = "#339966";
+                list[i].style.backgroundColor = "#005019";
                 list[i].style.color = "white";
                 
             }
