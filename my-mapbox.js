@@ -375,9 +375,13 @@ function mapLoaded() {
 
 function buttonClickHandler(_this) {
     
-   buttonStyleHandler(_this); 
+   if(_this.id != "button8"){
+    buttonStyleHandler(_this); 
+   }
+   var hospitalLayers = ["hospital_point","hospital_heat","hospital_points"];   
     
-   var clickedLayer = ["hospital_point","hospital_heat","hospital_points"];    
+   var reccomandationLayers = [""];
+    
    var visibility = map.getLayoutProperty(clickedLayer[1], 'visibility');
     
     if(_this.id == "button1" || _this.id == "button2"){
@@ -386,8 +390,8 @@ function buttonClickHandler(_this) {
             //turn off
             var j = 0;
             for (j=0;j<clickedLayer.length;j++){
-                map.setLayoutProperty(clickedLayer[j], 'visibility', 'none');
-                console.log(map.getLayoutProperty(clickedLayer[j], 'visibility'));
+                map.setLayoutProperty(hospitalLayers[j], 'visibility', 'none');
+                console.log(map.getLayoutProperty(hospitalLayers[j], 'visibility'));
             }
         }
         
@@ -395,13 +399,36 @@ function buttonClickHandler(_this) {
             //turn on
             var j = 0;
                 for (j=0;j<clickedLayer.length;j++){
-                    map.setLayoutProperty(clickedLayer[j], 'visibility', 'visible');
+                    map.setLayoutProperty(hospitalLayers[j], 'visibility', 'visible');
                     console.log("im in adding visibility code");
-                    console.log(map.getLayoutProperty(clickedLayer[j], 'visibility'));
+                    console.log(map.getLayoutProperty(hospitalLayers[j], 'visibility'));
                     //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
                 } 
         }
     }
+    
+    if(_this.id == "button8"){
+
+    if(visibility == "visible"){
+        //turn off
+        var j = 0;
+        for (j=0;j<clickedLayer.length;j++){
+            map.setLayoutProperty(reccomentations[j], 'visibility', 'none');
+            console.log(map.getLayoutProperty(reccomentations[j], 'visibility'));
+        }
+    }
+
+    if(visibility == 'none'){
+        //turn on
+        var j = 0;
+            for (j=0;j<clickedLayer.length;j++){
+                map.setLayoutProperty(reccomentations[j], 'visibility', 'visible');
+                console.log("im in adding visibility code");
+                console.log(map.getLayoutProperty(reccomentations[j], 'visibility'));
+                //var visibility = map.getLayoutProperty(clickedLayer[j], 'visibility');
+            } 
+    }
+}
     
     
     
