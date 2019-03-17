@@ -1,0 +1,318 @@
+popDensity = [
+ {
+   "Council": "Alpine",
+   "Density": 2.6
+ },
+ {
+   "Council": "Ararat",
+   "Density": 2.8
+ },
+ {
+   "Council": "Ballarat",
+   "Density": 139.9
+ },
+ {
+   "Council": "Banyule",
+   "Density": 2041.8
+ },
+ {
+   "Council": "Bass Coast",
+   "Density": 38.5
+ },
+ {
+   "Council": "Baw Baw",
+   "Density": 12.2
+ },
+ {
+   "Council": "Bayside",
+   "Density": 2760.9
+ },
+ {
+   "Council": "Benalla",
+   "Density": 5.9
+ },
+ {
+   "Council": "Boroondara",
+   "Density": 2947.3
+ },
+ {
+   "Council": "Brimbank",
+   "Density": 1667.3
+ },
+ {
+   "Council": "Buloke",
+   "Density": 0.8
+ },
+ {
+   "Council": "Campaspe",
+   "Density": 8.3
+ },
+ {
+   "Council": "Cardinia",
+   "Density": 76.1
+ },
+ {
+   "Council": "Casey",
+   "Density": 765.8
+ },
+ {
+   "Council": "Central Goldfields",
+   "Density": 8.5
+ },
+ {
+   "Council": "Colac-Otway",
+   "Density": 6.2
+ },
+ {
+   "Council": "Corangamite",
+   "Density": 3.7
+ },
+ {
+   "Council": "Darebin",
+   "Density": 2899.2
+ },
+ {
+   "Council": "East Gippsland",
+   "Density": 2.2
+ },
+ {
+   "Council": "Frankston",
+   "Density": 1076.5
+ },
+ {
+   "Council": "Gannawarra",
+   "Density": 2.8
+ },
+ {
+   "Council": "Glen Eira",
+   "Density": 3851.4
+ },
+ {
+   "Council": "Glenelg",
+   "Density": 3.2
+ },
+ {
+   "Council": "Golden Plains",
+   "Density": 8.1
+ },
+ {
+   "Council": "Greater Bendigo",
+   "Density": 37.3
+ },
+ {
+   "Council": "Greater Dandenong",
+   "Density": 1242.4
+ },
+ {
+   "Council": "Greater Geelong",
+   "Density": 191.2
+ },
+ {
+   "Council": "Greater Shepparton",
+   "Density": 26.9
+ },
+ {
+   "Council": "Hepburn",
+   "Density": 10.6
+ },
+ {
+   "Council": "Hindmarsh",
+   "Density": 0.8
+ },
+ {
+   "Council": "Hobsons Bay",
+   "Density": 1453.8
+ },
+ {
+   "Council": "Horsham",
+   "Density": 4.6
+ },
+ {
+   "Council": "Hume",
+   "Density": 412.5
+ },
+ {
+   "Council": "Indigo",
+   "Density": 7.9
+ },
+ {
+   "Council": "Kingston",
+   "Density": 1740.5
+ },
+ {
+   "Council": "Knox",
+   "Density": 1410.4
+ },
+ {
+   "Council": "Latrobe",
+   "Density": 52.1
+ },
+ {
+   "Council": "Loddon",
+   "Density": 1.1
+ },
+ {
+   "Council": "Macedon Ranges",
+   "Density": 27.2
+ },
+ {
+   "Council": "Manningham",
+   "Density": 1084.3
+ },
+ {
+   "Council": "Mansfield",
+   "Density": 2.2
+ },
+ {
+   "Council": "Maribyrnong",
+   "Density": 2797.6
+ },
+ {
+   "Council": "Maroondah",
+   "Density": 1872.3
+ },
+ {
+   "Council": "Melbourne",
+   "Density": 3963.4
+ },
+ {
+   "Council": "Melton",
+   "Density": 268.7
+ },
+ {
+   "Council": "Mildura",
+   "Density": 2.5
+ },
+ {
+   "Council": "Mitchell",
+   "Density": 14.5
+ },
+ {
+   "Council": "Moira",
+   "Density": 7.2
+ },
+ {
+   "Council": "Monash",
+   "Density": 2366.8
+ },
+ {
+   "Council": "Moonee Valley",
+   "Density": 2850.5
+ },
+ {
+   "Council": "Moorabool",
+   "Density": 15.5
+ },
+ {
+   "Council": "Moreland",
+   "Density": 3377.5
+ },
+ {
+   "Council": "Mornington Peninsula",
+   "Density": 222.1
+ },
+ {
+   "Council": "Mount Alexander",
+   "Density": 12.4
+ },
+ {
+   "Council": "Moyne",
+   "Density": 3
+ },
+ {
+   "Council": "Murrindindi",
+   "Density": 3.6
+ },
+ {
+   "Council": "Nillumbik",
+   "Density": 148.7
+ },
+ {
+   "Council": "Northern Grampians",
+   "Density": 2
+ },
+ {
+   "Council": "Port Phillip",
+   "Density": 5242
+ },
+ {
+   "Council": "Pyrenees",
+   "Density": 2.1
+ },
+ {
+   "Council": "Queenscliffe",
+   "Density": 337
+ },
+ {
+   "Council": "South Gippsland",
+   "Density": 8.8
+ },
+ {
+   "Council": "Southern Grampians",
+   "Density": 2.4
+ },
+ {
+   "Council": "Stonnington",
+   "Density": 4350.9
+ },
+ {
+   "Council": "Strathbogie",
+   "Density": 3.1
+ },
+ {
+   "Council": "Surf Coast",
+   "Density": 19.6
+ },
+ {
+   "Council": "Swan Hill",
+   "Density": 3.4
+ },
+ {
+   "Council": "Towong",
+   "Density": 0.9
+ },
+ {
+   "Council": "Wangaratta",
+   "Density": 7.8
+ },
+ {
+   "Council": "Warrnambool",
+   "Density": 283.1
+ },
+ {
+   "Council": "Wellington",
+   "Density": 4
+ },
+ {
+   "Council": "West Wimmera",
+   "Density": 0.4
+ },
+ {
+   "Council": "Whitehorse",
+   "Density": 2646.1
+ },
+ {
+   "Council": "Whittlesea",
+   "Density": 424.5
+ },
+ {
+   "Council": "Wodonga",
+   "Density": 92.1
+ },
+ {
+   "Council": "Wyndham",
+   "Density": 420.8
+ },
+ {
+   "Council": "Yarra",
+   "Density": 4778.3
+ },
+ {
+   "Council": "Yarra Ranges",
+   "Density": 62.9
+ },
+ {
+   "Council": "Yarriambiack",
+   "Density": 0.9
+ }
+]

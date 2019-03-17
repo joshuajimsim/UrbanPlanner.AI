@@ -1,0 +1,15 @@
+Recom_data = {
+
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [145.082691, -37.892492,]
+    },
+    "properties": {
+      "title": "Suggested Hospital",
+      "icon": "hospital"
+    }
+  }, ]
+}
