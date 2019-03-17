@@ -48,7 +48,7 @@ function MapGL() {
         // center: [-37.809820, 144.96983],
 
         center: [144.96983, -37.809820],
-        zoom: 15.5,
+        zoom: 10,
         pitch: 45,
         bearing: -0,
     });
