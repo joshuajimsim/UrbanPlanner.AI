@@ -1,15 +1,33 @@
 Recom_data = {
 
   "type": "FeatureCollection",
-  "features": [{
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [145.082691, -37.892492,]
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          145.082691,
+          -37.892492
+        ]
+      },
+      "properties": {
+        "title": "Suggested Hospital",
+        "icon": "hospital"
+      }
     },
-    "properties": {
-      "title": "Suggested Hospital",
-      "icon": "hospital"
-    }
-  }, ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          145.247774,
+          -38.075508
+        ]
+      },
+      "properties": {
+        "title": "Suggested School",
+        "icon": "school"
+      }
+    }]
 }

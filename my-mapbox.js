@@ -282,17 +282,16 @@ function mapLoaded() {
     // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
     // Begin color ramp at 0-stop with a 0-transparancy color
     // to create a blur-like effect.
-                "heatmap-color": [
-                    "interpolate",
-                    ["linear"],
-                    ["heatmap-density"],
-                    0, "rgba(125,200,250,0)",
-                    0.2, "rgb(125,200,240,0)",
-                    0.4, "rgb(100,220,240)",
-                    0.6, "rgb(60,240,240)",
-                    0.8, "rgb(25,250,250)",
-                    1, "rgb(0,255,255)"
-                ], //0, 225, 225
+                "heatmap-color":
+                    ["interpolate",
+                        ["linear"],
+                        ["heatmap-density"],
+                        0, "rgba(200,200,255,0)",
+                        0.3, "rgb(150,200,255)",
+                        0.5, "rgb(100,200,255)",
+                        0.8, "rgb(50,200,255)",
+                        1, "rgb(0,200,255)"]
+                ,
     // Adjust the heatmap radius by zoom level
                 "heatmap-radius": {
                     "base": 2,
@@ -339,7 +338,7 @@ function mapLoaded() {
                     ]
                 ],
     // Color circle by earthquake magnitude
-                "circle-color": "rgb(25, 25, 255)",
+                "circle-color": "rgb(0, 150, 255)",
                 "circle-stroke-color": "white",
                 "circle-stroke-width": 1,
     // Transition from heatmap to circle layer by zoom level
