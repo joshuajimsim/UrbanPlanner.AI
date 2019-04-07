@@ -1,0 +1,22 @@
+{
+  "name": "upai",
+  "version": "0.1.0",
+  "description": "Urban Planner AI - KPMG AI Ideation competition solution.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuajimsim/UrbanPlanner.AI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshuajimsim/UrbanPlanner.AI/issues"
+  },
+  "homepage": "https://github.com/joshuajimsim/UrbanPlanner.AI#readme",
+  "dependencies": {
+    "hapi": "^18.1.0"
+  }
+}
