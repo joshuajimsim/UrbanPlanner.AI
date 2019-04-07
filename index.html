@@ -31,7 +31,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
     <!-- juqery required for bootstrap js -->
   <script
@@ -98,13 +98,13 @@
     </div> <!-- /container -->
     
   <!-- local code to load and style the map -->
-  <script type="text/javascript" src="Hospital_Locations.geojson"></script>
-  <script type="text/javascript" src="VICSchools.geojson"></script>
-<script type="text/javascript" src="test.json"></script>
-      <script type="text/javascript" src="test1.json"></script>
-      <script type="text/javascript" src="density.json"></script>
-    <script src="my-mapbox.js"></script>
-    <script src="ui.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='Hospital_Locations.geojson') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='VICSchools.geojson') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='test.json') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename='test1.json') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename='density.json') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='my-mapbox.js') }}"></script>>
+    <script type="text/javascript" src="{{ url_for('static', filename='ui.js') }}"></script>
       
   </body>
 </html>
