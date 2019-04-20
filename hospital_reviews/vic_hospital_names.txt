@@ -1,0 +1,238 @@
+Albert Road Clinic
+Albury Wodonga Health [Wodonga Campus]
+Alexandra District Hospital
+Alpine Health [Bright]
+Alpine Health [Mount Beauty]
+Alpine Health [Myrtleford]
+Angliss Hospital
+Austin Hospital [Heidelberg]
+Bairnsdale Regional Health Service
+Ballarat Day Procedure Centre
+Ballarat Health Services [Base Campus]
+Ballarat Health Services [Queen Elizabeth Campus]
+Bass Coast Regional Health
+Beaufort & Skipton Health Service [Beaufort]
+Beaufort & Skipton Health Service [Skipton]
+Beechworth Health Service
+Beleura Private Hospital
+Bellbird Private Hospital
+Benalla & District Memorial Hospital
+Bendigo Health Care Group [Anne Caudle]
+Berwick Eye and Surgicentre
+Boort District Health
+Box Hill Hospital
+Broadmeadows Health Service
+Bundoora Extended Care Centre
+Cabrini Brighton
+Cabrini Health Elsternwick Rehabilitation - Glenhuntly Rd
+Cabrini Health Elsternwick Rehabilitation - Hopetoun
+Cabrini Malvern
+Cabrini Prahran
+Calvary Health Care Bethlehem
+Caritas Christi Hospice [Kew]
+Casey Hospital
+Casterton Memorial Hospital
+Castlemaine Health
+Caulfield Hospital
+Central Gippsland Health Service [Maffra]
+Central Gippsland Health Service [Sale]
+Chesterville Day Hospital
+Cobram District Hospital
+Cohuna District Hospital
+Colac Area Health
+Corymbia House
+Craigieburn Health Service
+Cranbourne Integrated Care Centre
+Creswick District Hospital
+Dame Phyllis Frost Centre - Marmak unit
+Dandenong Campus
+Daylesford District Hospital
+Dental Health Services Victoria
+Dimboola District Hospital
+Djerriwarrh Health Service [Bacchus Marsh]
+Donvale Rehabilitation Hospital
+Dorset Rehabilitation Centre
+East Grampians Health Service [Ararat]
+East Grampians Health Service [Willaura]
+East Wimmera Health Service [Birchip]
+East Wimmera Health Service [Charlton]
+East Wimmera Health Service [Donald]
+East Wimmera Health Service [St Arnaud]
+East Wimmera Health Service [Wycheproof]
+Echuca Regional Health
+Edenhope and District Memorial Hospital
+Epworth Cliveden
+Epworth Eastern
+Epworth Freemasons [Clarendon Street]
+Epworth Freemasons [Victoria Parade]
+Epworth Geelong
+Epworth Hawthorn
+Epworth Rehabilitation Brighton
+Epworth Rehabilitation Camberwell
+Epworth Rehabilitation Richmond
+Epworth Richmond
+Essendon Private Hospital
+Frances Perry House
+Frankston Hospital
+Frankston Private Hospital
+Gippsland Southern Health Service - Korumburra
+Gippsland Southern Health Service - Leongatha
+Glen Eira Day Surgery
+Glenferrie Private Hospital
+Golf Links Road Rehabilitation Centre
+Goulburn Valley Health [Shepparton]
+Goulburn Valley Health [Tatura]
+Goulburn Valley Health [Waranga]
+Healesville Hospital and Yarra Valley Health
+Healthscope Independence Services
+Heathcote Health
+Heidelberg Endoscopy & Day Surgery Centre
+Heidelberg Repatriation Hospital [Heidelberg West]
+Hesse Rural Health Service [Winchelsea]
+Heywood Rural Health
+Hobsons Bay Endoscopy Centre Altona
+Hobsons Bay Endoscopy Centre Sydenham
+Hobsons Bay Endoscopy Centre Werribee
+Holmesglen Private Hospital
+Inglewood & District Health Service
+Jessie McPherson Private Hospital
+John Fawkner Private Hospital
+Jolimont Endoscopy
+Kerang District Health
+Kingston Centre [Cheltenham]
+Knox Private Hospital
+Kooweerup Regional Health Service
+Kyabram & District Health Service
+Kyneton District Health Service
+La Trobe Private Hospital
+Latrobe Regional Hospital [Traralgon]
+Linacre Private Hospital
+Lorne Community Hospital
+Maldon Hospital
+Mallee Track Health & Community Service [Ouyen]
+Mallee Track Health & Community Service [Sea Lake]
+Malvern Private Hospital
+Manangatang & District Hospital
+Manningham Day Procedure Centre
+Mansfield District Hospital
+Maroondah Hospital [East Ringwood]
+Maryborough District Health Service [Dunolly]
+Maryborough District Health Service [Maryborough]
+Maryvale Private Hospital
+Masada Private Hospital
+Melbourne MediBrain & MediSleep Centre
+Melbourne Oral & Facial Surgery
+Melbourne Private Hospital
+Melton Health
+Mercy Health - O'Connell Family Centre
+Mercy Hospital for Women
+Mildura Base Hospital
+Mildura Private Hospital
+Mitcham Private Hospital
+Monash Medical Centre [Clayton]
+Monash Medical Centre [Moorabbin]
+Moyne Health Services [Port Fairy]
+Murray Valley Private Hospital
+Nathalia District Hospital
+North Eastern Rehabilitation Centre
+Northeast Health Wangaratta
+Northpark Private Hospital
+Numurkah & District Health Service
+Omeo District Health
+Orbost Regional Health
+Orygen Inpatient Unit
+Otway Health & Community Services [Apollo Bay]
+Peninsula Private Hospital Victoria
+Peter MacCallum Cancer Centre
+Portland District Health
+Queen Elizabeth Centre [Noble Park]
+Ringwood Private Hospital
+Robinvale District Health Services
+Rochester & Elmore District Health Service
+Rosebud Hospital
+Rosebud SurgiCentre
+Royal Children's Hospital [Parkville]
+Royal Melbourne Hospital [Parkville]
+Royal Melbourne Hospital- Royal Park Campus
+Royal Talbot Rehabilitation Centre [Kew]
+Royal Women's Hospital [Parkville]
+Rural Northwest Health [Hopetoun]
+Rural Northwest Health [Warracknabeal]
+Sandringham Hospital
+Seymour District Memorial Hospital
+Shepparton Private Hospital
+South Eastern Private
+South Gippsland Hospital [Foster]
+South West Healthcare [Camperdown]
+South West Healthcare [Warrnambool]
+St George's Health Service- Aged Care
+St John of God Ballarat Hospital
+St John of God Bendigo Hospital
+St John of God Berwick Hospital
+St John of God Frankston Rehabilitation Hospital
+St John of God Geelong Hospital
+St John of God Pinelodge Clinic
+St John of God Warrnambool Hospital
+St Vincent's Hospital [Fitzroy]
+St Vincent's Private Hospital East Melbourne
+St Vincent's Private Hospital Fitzroy
+St Vincent's Private Hospital Kew
+Stawell Regional Health
+Sunbury Day Hospital
+Sunshine Hospital
+Swan Hill District Health [Nyah]
+Swan Hill District Health [Swan Hill]
+Tallangatta Health Service
+Terang & Mortlake Health Service [Terang]
+The Alfred
+The Avenue Hospital
+The Bays Hospital
+The Bendigo Hospital
+The Geelong Clinic
+The Kilmore & District Hospital
+The McKellar Centre
+The Melbourne Clinic
+The Mornington Centre
+The Northern Hospital [Epping]
+The Peter James Centre [East Burwood]
+The Royal Victorian Eye & Ear Hospital
+The Valley Private Hospital
+The Victoria Clinic
+The Victorian Rehabilitation Centre
+Timboon & District Healthcare Service
+Tweddle Child & Family Health Centre [Footscray]
+University Hospital Geelong
+Upper Murray Health & Community Services [Corryong]
+Ursula Frayne Centre
+Victoria Parade Surgery Centre
+Victorian Institute of Forensic Mental Health
+Victorian Institute of Forensic Mental Health Prison Health Service
+Vision Day Surgery Camberwell
+Vision Day Surgery Eastern
+Vision Day Surgery Footscray
+Vision Eye Institute
+Wangaratta Private Hospital
+Wantirna Health
+Warringal Private Hospital
+Waverley Private Hospital
+Werribee Mercy Hospital
+West Gippsland Healthcare Group [Warragul]
+West Wimmera Health Service [Jeparit]
+West Wimmera Health Service [Kaniva]
+West Wimmera Health Service [Nhill]
+West Wimmera Health Service [Rainbow]
+West Wimmera Health Service [Rupanyup]
+Western District Health Service [Coleraine District Health Service]
+Western District Health Service [Hamilton]
+Western District Health Service [Penshurst]
+Western Gastroenterology Services
+Western Hospital [Footscray]
+Western Private Hospital
+Williamstown Hospital
+Wimmera Base Hospital [Horsham]
+Windsor Private Hospital
+Women's at Sandringham
+Yarra Ranges Health
+Yarram & District Health Service
+Yarrawonga District Health Service
+Yea & District Memorial Hospital
