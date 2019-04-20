@@ -31,13 +31,9 @@ def readFile():
 
     if file.mode == 'r':
         for line in file:
-            #check that the line is a number and is 15 digits otherwise discard.
             hospitalNames.append(line)
 
     print ("\n"+ str(len(hospitalNames))+ " HospitalNames successfully read from file\n")
-    #for x in range(len(hospitalNames)):
-
-        #print (str(hospitalNames[x]))
 
     return hospitalNames
 
@@ -52,7 +48,7 @@ hospitalNames = readFile()
 output = []
 
 #loop through each hospital name. 
-for i in range(0,len(hospitalNames)-1):
+for i in range(0,len(hospitalNames)):
     
     print("Finding place id for "+hospitalNames[i]+'\n')    
     requestString = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input='+hospitalNames[i]+'&inputtype=textquery&fields=place_id&key=AIzaSyDNOnrGBpBxay2KjYp-55OYKAZWw0dWZGU'
